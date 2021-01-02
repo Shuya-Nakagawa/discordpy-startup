@@ -15,8 +15,10 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def サムネがつまらない(ctx):
     await ctx.send('ほならね？')
+    
 async def ping(ctx):
     await ctx.send('pong')
+    
 async def 助詞24人で行きます(ctx):
     await ctx.send('ほほ＾～')
     
