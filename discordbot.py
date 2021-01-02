@@ -12,9 +12,19 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-
 @bot.command()
 async def サムネがつまらない(ctx):
     await ctx.send('ほならね？')
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
+@bot.command()
+async def on_message(message):
+    # メッセージ送信者がBotだった場合は無視する
+    if message.author.bot:
+        return
+    # 「/neko」と発言したら「にゃーん」が返る処理
+    if message.content == '/neko':
+        await message.channel.send('にゃーん')
 
 bot.run(token)
