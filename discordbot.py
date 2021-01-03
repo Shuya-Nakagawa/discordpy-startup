@@ -19,7 +19,7 @@ async def サムネがつまらない(ctx):
 async def ping(ctx):
     await ctx.send('pong')
     
-async def 助詞24人で行きます(ctx):
+async def 助詞２４人で行きます(ctx):
     await ctx.send('ほほ＾～')
     
 bot.run(token)
