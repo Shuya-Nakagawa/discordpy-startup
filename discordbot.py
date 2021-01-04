@@ -5,8 +5,6 @@ import traceback
 
 token = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client();
-    # インストールした discord.py を読み込む
-import dicord
 
 # 接続に必要なオブジェクトを生成
 client = discord.Client();
