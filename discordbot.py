@@ -5,7 +5,7 @@ import traceback
 
 token = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client()
-bot = commands.Bot(command_prefix='/')
+bot = commands.Bot(command_prefix='＄')
 
 
 @bot.command(name="こんにちは")
