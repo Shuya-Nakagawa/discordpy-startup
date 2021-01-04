@@ -4,6 +4,7 @@ import os
 import traceback
 
 token = os.environ['DISCORD_BOT_TOKEN']
+bot = commands.Bot(command_prefix='/')
 client = discord.Client();
 
 # メッセージ受信時に動作する処理
@@ -15,14 +16,14 @@ async def on_message(message):
     # 「/neko」と発言したら「にゃーん」が返る処理
     if message.content == '/サムネがつまらない':
         await message.channel.send('ほならね？')
-@client.event
-async def on_message(message):
+#@client.event
+#async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
-    if message.author.bot:
-        return
+ #   if message.author.bot:
+  #      return
     # 「/neko」と発言したら「にゃーん」が返る処理
-    if message.content == '/アイコンがつまらない':
-        await message.channel.send('ほならね？')
+   # if message.content == '/アイコンがつまらない':
+    #    await message.channel.send('ほならね？')
 
 
 client.run(token)
