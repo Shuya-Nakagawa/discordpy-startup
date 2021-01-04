@@ -7,23 +7,16 @@ token = os.environ['DISCORD_BOT_TOKEN']
 bot = commands.Bot(command_prefix='/')
 client = discord.Client();
 
-# メッセージ受信時に動作する処理
-@client.event
-async def on_message(message):
-    # メッセージ送信者がBotだった場合は無視する
-    if message.author.bot:
-        return
-    # 「/neko」と発言したら「にゃーん」が返る処理
-    if message.content == '/サムネがつまらない':
-        await message.channel.send('ほならね？')
-#@client.event
-#async def on_message(message):
-    # メッセージ送信者がBotだった場合は無視する
- #   if message.author.bot:
-  #      return
-    # 「/neko」と発言したら「にゃーん」が返る処理
-   # if message.content == '/アイコンがつまらない':
-    #    await message.channel.send('ほならね？')
+
+@bot.command(name="こんにちは")
+async def hello(ctx):
+    await ctx.send(f"どうも、{ctx.message.author.name}さん！")
 
 
-client.run(token)
+@bot.command(name="さようなら")
+async def goodbye(ctx):
+    await ctx.send(f"じゃあね、{ctx.message.author.name}さん！")
+
+
+# 取得したトークンを「TOKEN_HERE」の部分に記入
+bot.run('token')
