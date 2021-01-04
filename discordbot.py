@@ -6,8 +6,6 @@ import traceback
 token = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client();
 
-# 接続に必要なオブジェクトを生成
-client = discord.Client();
 # メッセージ受信時に動作する処理
 @client.event
 async def on_message(message):
@@ -18,4 +16,4 @@ async def on_message(message):
     if message.content == 'aa':
         await message.channel.send('にゃーん')
 
-bot.run(token)
+client.run(token)
