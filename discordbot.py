@@ -7,14 +7,15 @@ token = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client()
 bot = commands.Bot(command_prefix='＄')
 
+@client.event()
 
-@bot.command(name="こんにちは")
-async def hello(ctx):
-    await ctx.send(f"どうも、{ctx.message.author.name}さん！")
+async def on_message(message):
 
+    if messeage.author.bot:
+        return
+    if messeage.content == '/ping':
+        await message.channel.send('pong')
+    if message.content == '/neko':
+        await message.channel.send('にゃーん')
 
-@bot.command(name="さようなら")
-async def goodbye(ctx):
-    await ctx.send(f"じゃあね、{ctx.message.author.name}さん！")
-
-bot.run('token')
+client.run('token')
